@@ -11,8 +11,16 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+
+
+bootJar{
+	baseName = 'RapAssist'
+	version = '0.1.0'
+}
 
 group = 'com.codespark'
 version = '0.0.1-SNAPSHOT'
@@ -27,5 +35,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	
+
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-starter-jetty")
+	compile("org.postgresql:postgresql")
+	testCompile("junit:junit")
+	compile("com.h2database:h2")
+
 }
