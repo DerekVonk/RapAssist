@@ -1,0 +1,8 @@
+version: '2'
+services:
+  postgres:
+    container_name: db.rapassist
+    image: postgres:10
+    env_file: .env
+    ports:
+      - 127.0.0.1:5440:5432
